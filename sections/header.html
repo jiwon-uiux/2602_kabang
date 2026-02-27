@@ -8,8 +8,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-    <header class="con-min-width border-green">
-        <div class="con border-blue flex height-100p">
+    <header class="con-min-width">
+        <div class="con flex height-100p">
             <div class="logo_box img-box flex-as-c">
                 <a href="#">
                     <img src="../imgs/imgi_18_logo_black.svg" alt="logo_img">
@@ -18,7 +18,7 @@
 
             <div class="flex-grow-1"></div>
 
-            <nav class="menu_box border-red">
+            <nav class="menu_box">
                 <ul class="flex height-100p">
                     <li><a href="#" class="flex flex-ai-c height-100p">은행소개</a></li>
                     <li><a href="#" class="flex flex-ai-c height-100p">IR투자정보</a></li>
@@ -149,13 +149,51 @@
 
         /* ----- 헤더 시작 ----- */
         header {
+          width: 100%;
           height: 80px;
           font-size: 15px;
           background-color: #fff;
+          position: fixed;
+          top: 0;
+          left: 0;
+          border-bottom: 1px solid rgba(0, 0, 0, .1);
         }
         /* 로고 */
         header .logo_box > a {
           width: 116px;
+        }
+
+        /* 메뉴 박스 - 1차 메뉴 */
+        header .menu_box > ul > li > a {
+          margin: 0 12px;
+          padding: 0 12px;
+          position: relative;
+        }
+
+        header .menu_box > ul > li > a:after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background-color: #000;
+          display: none;
+        }
+
+        /* 메뉴 박스 - 2차 메뉴 */
+        header .menu_box > ul > li > ul {
+          width: 100%;
+          height: 200px;
+          background-color: burlywood;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          display: none;
+        }
+
+        header .menu_box > ul > li:hover > ul {
+          display: block;
         }
 
         /* dropdown menu */
