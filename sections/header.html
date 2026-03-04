@@ -281,6 +281,13 @@
                   </ul>
                 </div>
             </div>
+
+            <!-- 글로벌 파트 -->
+             <div class="flex-as-c">
+                <a href="#" class="global_logo">
+                    <img src="../imgs/imgi_19_icon_eng.svg" alt="">
+                </a>
+             </div>
         </div>
     </header>
 
@@ -547,9 +554,41 @@
           text-decoration: underline;
         }
 
+        /* 글로벌 로고 */
+        header .global_logo > img {
+            display: block;
+            width: 100%;
+        }
+
+        header .global_logo:hover > img {
+            opacity: .4;
+        }
+        /* 헤더 끝 배너 시작 */
     </style>
+
+    <script>
         $('.drop_btn').click(function() {
           var dropDownContent = $()
         });
+
+        $dropBtn.click(function() {
+            $(dropDownContent).toggleClass('is-active');
+            $dropBtn.toggleClass('rotate');
+        });
+
+        $(window).click(function(e) {
+            if ( $(e.target).closest('drop_btn').length ) {
+                $dropDownContent.removeClass('is-active');
+                $dropBtn.removeClass('rotate');
+            }
+        });
+
+        $('header .menu_box > ul > li').mouseenter(function() {
+            $dropDownContent.removeClass('is-active');
+            $dropBtn.removeClass('rotate');
+        });
+
+    </script>
 </body>
+
 </html>
